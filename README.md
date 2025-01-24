@@ -138,4 +138,24 @@ function toggleForm() {
         switchText.innerHTML = `Already have an account? <span onclick="toggleForm()">Log In</span>`;
     }
 }
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyA5w4owsG5-DbCXFtLYSFwt4tAAnelxTBE",
+  authDomain: "firstroundcoin.firebaseapp.com",
+  projectId: "firstroundcoin",
+  storageBucket: "firstroundcoin.firebasestorage.app",
+  messagingSenderId: "236154978212",
+  appId: "1:236154978212:web:22df634eee87288a0c4b31",
+  measurementId: "G-54T9Y0H06V"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
