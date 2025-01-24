@@ -91,60 +91,6 @@ button {
     color: #007bff;
     cursor: pointer;
 }
-// Firebase Configuration (Replace with your Firebase project info)
-const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-// Firebase Auth
-const auth = firebase.auth();
-
-document.getElementById("auth-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (document.getElementById("form-title").innerText === "Sign Up") {
-        // Sign-Up
-        auth.createUserWithEmailAndPassword(email, password)
-            .then(() => alert("Sign-Up Successful!"))
-            .catch((error) => alert(error.message));
-    } else {
-        // Log-In
-        auth.signInWithEmailAndPassword(email, password)
-            .then(() => alert("Log-In Successful!"))
-            .catch((error) => alert(error.message));
-    }
-});
-
-// Toggle Between Sign-Up and Log-In
-function toggleForm() {
-    const title = document.getElementById("form-title");
-    const switchText = document.getElementById("switch-mode");
-
-    if (title.innerText === "Sign Up") {
-        title.innerText = "Log In";
-        switchText.innerHTML = `Don't have an account? <span onclick="toggleForm()">Sign Up</span>`;
-    } else {
-        title.innerText = "Sign Up";
-        switchText.innerHTML = `Already have an account? <span onclick="toggleForm()">Log In</span>`;
-    }
-}
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA5w4owsG5-DbCXFtLYSFwt4tAAnelxTBE",
@@ -155,7 +101,4 @@ const firebaseConfig = {
   appId: "1:236154978212:web:22df634eee87288a0c4b31",
   measurementId: "G-54T9Y0H06V"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+   
